@@ -4,7 +4,7 @@ node {
   }
 
   stage('Build') {
-    sh 'docker image build -t randomonord/demo-api:latest .'
+    sh 'docker image build -t randomonord/demo-api .'
   }
 
   stage('Push') {
