@@ -13,7 +13,7 @@ node {
                          usernameVariable: 'USERNAME',
                          passwordVariable: 'PASSWORD')]) {
       sh 'docker login -p "${PASSWORD}" -u "${USERNAME}"'
-      sh 'docker image push ${USERNAME}/demo-api:latest'
+      sh 'docker image push ${USERNAME}/demo-api'
     }
   }
 
