@@ -4,7 +4,7 @@ node {
   }
 
   stage('Build') {
-    sh 'docker image build -t randomonord/demo-api .'
+    sh 'docker image build -t randomnord/demo-api:latest .'
   }
 
   stage('Push') {
@@ -13,7 +13,7 @@ node {
                          usernameVariable: 'USERNAME',
                          passwordVariable: 'PASSWORD')]) {
       sh 'docker login -p "${PASSWORD}" -u "${USERNAME}"'
-      sh 'docker image push ${USERNAME}/demo-api'
+      sh 'docker image push ${USERNAME}/demo-api:latest'
     }
   }
 
